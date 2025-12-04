@@ -57,7 +57,7 @@ export default {
         }
       },
       fontFamily: {
-sans: ['Inter', 'sans-serif', 'ui-sans-serif', 'system-ui'],
+sans: ['Devnagari', 'sans-serif', 'ui-sans-serif', 'system-ui'],
       },
       fontSize: {
         'xs': ['12px', '16px'],
