@@ -37,6 +37,7 @@ const SidebarNavigation = () => {
       icon: "DollarSign",
     },
 { name: 'Labors', path: '/labors', icon: 'Users' },
+        { name: 'Equipment', path: '/equipements', icon: 'Wrench' },
   ];
 
   return (
