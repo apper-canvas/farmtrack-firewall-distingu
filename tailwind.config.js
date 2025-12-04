@@ -57,7 +57,7 @@ export default {
         }
       },
       fontFamily: {
-        sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+sans: ['Times New Roman', 'serif', 'ui-serif', 'system-ui'],
       },
       fontSize: {
         'xs': ['12px', '16px'],
