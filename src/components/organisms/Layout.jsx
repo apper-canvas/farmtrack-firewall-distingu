@@ -36,8 +36,8 @@ const SidebarNavigation = () => {
       href: "finance",
       icon: "DollarSign",
     },
-{ name: 'Labors', path: '/labors', icon: 'Users' },
-        { name: 'Equipment', path: '/equipements', icon: 'Wrench' },
+{ name: 'Labors', href: 'labors', icon: 'Users' },
+    { name: 'Equipment', href: 'equipements', icon: 'Wrench' },
   ];
 
   return (
