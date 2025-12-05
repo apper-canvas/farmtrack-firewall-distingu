@@ -1,19 +1,19 @@
-import React, { useState, useEffect } from "react";
-import ApperIcon from "@/components/ApperIcon";
-import Button from "@/components/atoms/Button";
-import Select from "@/components/atoms/Select";
-import TaskCard from "@/components/organisms/TaskCard";
-import FloatingActionButton from "@/components/molecules/FloatingActionButton";
-import FormField from "@/components/molecules/FormField";
-import Loading from "@/components/ui/Loading";
-import ErrorView from "@/components/ui/ErrorView";
-import Empty from "@/components/ui/Empty";
+import React, { useEffect, useState } from "react";
 import { taskService } from "@/services/api/taskService";
 import { cropService } from "@/services/api/cropService";
 import { fieldService } from "@/services/api/fieldService";
 import { farmService } from "@/services/api/farmService";
 import { toast } from "react-toastify";
-import { isOverdue, isDueSoon } from "@/utils/dateUtils";
+import ApperIcon from "@/components/ApperIcon";
+import Loading from "@/components/ui/Loading";
+import ErrorView from "@/components/ui/ErrorView";
+import Empty from "@/components/ui/Empty";
+import Select from "@/components/atoms/Select";
+import Button from "@/components/atoms/Button";
+import TaskCard from "@/components/organisms/TaskCard";
+import FloatingActionButton from "@/components/molecules/FloatingActionButton";
+import FormField from "@/components/molecules/FormField";
+import { isDueSoon, isOverdue } from "@/utils/dateUtils";
 
 const Tasks = () => {
   const [data, setData] = useState({
@@ -115,6 +115,7 @@ const Tasks = () => {
       toast.error("Failed to complete task. Please try again.");
     }
   };
+};
 
   const handleEditTask = (task) => {
     setEditingTask(task);
@@ -122,12 +123,11 @@ const Tasks = () => {
       title: task.title,
       description: task.description || "",
       cropId: task.cropId.toString(),
-      dueDate: task.dueDate.split("T")[0],
+      dueDate: task.dueDate ? task.dueDate.split("T")[0] : "",
       priority: task.priority || "medium",
     });
     setShowTaskModal(true);
   };
-
   const handleDeleteTask = async (task) => {
     if (!confirm("Are you sure you want to delete this task?")) {
       return;
