@@ -285,11 +285,10 @@ export const cropService = {
         return successful.length > 0;
       }
 
-      return true;
+return true;
     } catch (error) {
       console.error("Error deleting crop:", error?.response?.data?.message || error);
       return false;
-return false;
     }
   }
 };
